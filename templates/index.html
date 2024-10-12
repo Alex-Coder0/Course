@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Roboto Mono', monospace;
+        }
+        .navbar {
+            background-color: #1f1f1f;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .btn-login, .btn-register {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-login:hover, .btn-register:hover {
+            background-color: #555;
+        }
+        .card {
+            background-color: #1f1f1f;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .card-title {
+            color: white;
+        }
+        .card-description {
+            color: #bbb;
+            font-size: 14px;
+        }
+        .btn-course {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border-radius: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-course:hover {
+            background-color: #555;
+        }
+        .courses-container {
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Void</a>
+        <div class="ml-auto">
+            {% if username %}
+                <span class="navbar-text">Привет, {{ username }}!</span>
+            {% else %}
+                <a class="btn-login" href="/login">Login</a>
+                <a class="btn-register" href="/register">Reg</a>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h3 class="text-center">Курсы:</h3>
+        <div class="courses-container d-flex justify-content-around mt-4">
+            <!-- Python Card -->
+            <div class="card" style="width: 16rem;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Python</h5>
+                    <p class="card-description">Изучите основы Python, включая работу с данными, модулями и ООП.</p>
+                    <button class="btn-course" onclick="location.href='/lesson/1/Python'">Начать курс</button>
+                </div>
+            </div>
+            <!-- C++ Card -->
+            <div class="card" style="width: 16rem;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">C++</h5>
+                    <p class="card-description">Углубленное обучение C++, STL, многопоточность и управление памятью.</p>
+                    <button class="btn-course" onclick="location.href='/lesson/1/C++'">Начать курс</button>
+                </div>
+            </div>
+            <!-- Go Lang Card -->
+            <div class="card" style="width: 16rem;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">GO Lang</h5>
+                    <p class="card-description">Программируйте быстрые и надежные приложения с использованием Go Lang.</p>
+                    <button class="btn-course" onclick="location.href='/lesson/1/Go'">Начать курс</button>
+                </div>
+            </div>
+            <!-- Rust Card -->
+            <div class="card" style="width: 16rem;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Rust</h5>
+                    <p class="card-description">Исследуйте безопасное программирование с помощью Rust и системное ПО.</p>
+                    <button class="btn-course" onclick="location.href='/lesson/1/Rust'">Начать курс</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

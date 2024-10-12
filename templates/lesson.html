@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Roboto Mono', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .CourseName, .LessonName {
+            margin: 0;
+            padding: 10px;
+            font-size: 2rem;
+            word-wrap: break-word;
+        }
+
+        .CourseName {
+            font-size: 2.5rem;
+        }
+
+        iframe {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .CourseName {
+                font-size: 2rem;
+            }
+
+            .LessonName {
+                font-size: 1.5rem;
+            }
+    
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="CourseName">{{ course_name }}</h1>
+        <h1 class="LessonName">{{ lesson_name }}</h1>
+        <iframe src="https://www.youtube.com/embed/{{ youtube_video_id }}" allowfullscreen></iframe>
+        <a href="/redirect/{{  name  }}">
+        <button class="NextLesson" style="
+            border-radius: 10px;
+            width: 111px;
+            height: 40px;
+        
+            "
+            >Следующий урок</button>
+        </a>
+    </div>
+</body>
+</html>
